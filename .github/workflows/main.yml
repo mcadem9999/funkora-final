@@ -1,0 +1,20 @@
+name: Build webOS IPK
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Install Tools
+        run: npm install -g @webosose/ares-cli
+      - name: Package
+        run: ares-package .
+      - name: Export
+        uses: actions/upload-artifact@v2
+        with:
+          name: FunkoraApp
+          path: ./*.ipk
