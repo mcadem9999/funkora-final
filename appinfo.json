@@ -2,8 +2,9 @@
     "id": "com.funkora.app",
     "version": "1.0.0",
     "type": "web",
-    "main": "https://www.funkora.online/",
+    "main": "index.html",
     "title": "Funkora TV",
     "icon": "icon.png",
     "uiRevision": 2
 }
+
