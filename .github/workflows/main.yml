@@ -18,3 +18,7 @@ jobs:
         with:
           name: Funkora-TV-App
           path: ./*.ipk
+- name: Package App
+        run: |
+          chmod +x -R .
+          ares-package .
