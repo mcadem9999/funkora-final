@@ -4,17 +4,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Setup Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: '16'
-      - name: Install Tools
+          node-version: '20'
+      - name: Install webOS CLI
         run: npm install -g @webosose/ares-cli
-      - name: Package
+      - name: Package App
         run: ares-package .
-      - name: Export
-        uses: actions/upload-artifact@v2
+      - name: Upload IPK
+        uses: actions/upload-artifact@v4
         with:
-          name: FunkoraApp
+          name: Funkora-TV-App
           path: ./*.ipk
